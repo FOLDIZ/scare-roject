@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Крута штука</title>
+    <style>
+        body{
+            background:#000;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            margin:0;
+        }
+        #scare{
+            display:none;
+            position:fixed;
+            top:50%;left:50%;
+            transform:translate(-50%,-50%);
+        }
+        button{
+            padding:10px 20px;
+            font-size:18px;
+            cursor:pointer;
+            background:#fff;
+            border:none;
+            border-radius:5px;
+        }
+        button:hover{background:#ddd;}
+    </style>
+</head>
+<body>
+    <h1 style="color:white;">Натисни кнопку, щоб почати...</h1>
+    <button onclick="showScare()">Почати</button>
+
+    <!-- Зображення-скрімер -->
+    <img id="scare"
+         src="https://i.pinimg.com/564x/c3/fe/8a/c3fe8a0d6bcbcdeeb4d310e4f5e598e4.jpg"
+         alt="Scare" width="500">
+
+    <!-- Новий звук крику -->
+<audio id="scream" src="https://freesound.org/data/previews/331/331912_3248244-lq.mp3" preload="auto"></audio>
+
+    <script>
+        function showScare(){
+            document.getElementById('scare').style.display='block';
+            document.getElementById('scream').play();
+            document.querySelector('h1').style.display='none';
+            document.querySelector('button').style.display='none';
+        }
+    </script>
+</body>
+</html>
